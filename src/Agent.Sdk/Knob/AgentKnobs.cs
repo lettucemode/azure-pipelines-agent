@@ -705,5 +705,12 @@ namespace Agent.Sdk.Knob
             new EnvironmentKnobSource("ROSETTA2_WARNING"),
             new PipelineFeatureSource("Rosetta2Warning"),
             new BuiltInDefaultKnobSource("false"));
+
+        public static readonly Knob AllowMultipleCheckoutPathsForSameRepo = new Knob(
+            nameof(AllowMultipleCheckoutPathsForSameRepo),
+            "Allows a repository to be checked out to multiple paths when used in multiple checkout steps in the same job. The default behavior is to move the repo to each checkout step's path.",
+            new RuntimeKnobSource("AGENT_ALLOW_MULTIPLE_CHECKOUT_PATHS_FOR_SAME_REPO"),
+            new EnvironmentKnobSource("AGENT_ALLOW_MULTIPLE_CHECKOUT_PATHS_FOR_SAME_REPO"),
+            new BuiltInDefaultKnobSource("false"));
     }
 }
